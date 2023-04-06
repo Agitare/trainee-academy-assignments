@@ -188,11 +188,14 @@ The implementation is up to you. Below is an example of desired output.
 If the user writes ``quit`` in to the command line, program should quit.
 
 
-## Initial thoughts
-
 ## Solution
 
-## 1. import and variables
+### Prerequisites
+This ChatBot should work on most terminals (tested on PowerShell on Windows 10).
+
+### Initial thoughts
+
+### 1. import and variables
 First I imported "readline" from "readline-sync" and initialized global variables I need.
 
 ```js
@@ -208,7 +211,7 @@ let terminate = false;
 ```
 
 ## 2. Make all commands into functions.
-After that, I made each command into functions, example function (all functions inside JS-file):
+After that, I made each command into function, example function (all functions inside the JS-file):
 
 ```js
 function botName () {
