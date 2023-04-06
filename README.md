@@ -1,2 +1,2 @@
 # trainee-academy-assignments
-Showcase of assignments and their solutions
+Showcase of chosen assignments and their solutions
