@@ -188,26 +188,18 @@ The implementation is up to you. Below is an example of desired output.
 If the user writes ``quit`` in to the command line, program should quit.
 
 
-##Initial thoughts
+## Initial thoughts
 
-##Solution
+## Solution
 
-##1. import and variables
+## 1. import and variables
 First I imported "readline" from "readline-sync" and initialized global variables I need.
 
 ```js
 import readline from "readline-sync";
 
 const help = `-----------------------------
-Here´s a list of commands that I can execute! 
-
-help: Opens this dialog.
-hello: I will say hello to you
-botInfo: I will introduce myself
-botName: I will tell my name
-botRename: You can rename me
-forecast: I will forecast tomorrows weather 100% accurately
-quit: Quits the program.
+{List of commands}
 -----------------------------`;
 
 let counter = 0;
@@ -215,5 +207,57 @@ let name = "Chappy";
 let terminate = false;
 ```
 
-##2. Make all commands into functions.
-First I made each command into functions, example 
+## 2. Make all commands into functions.
+After that, I made each command into functions, example function (all functions inside JS-file):
+
+```js
+function botName () {
+    counter++;
+    console.log(`My name is currently ${name}. If you want to change it, type botRename.`);
+}
+```
+
+## 3. Make "random generator" for the forecast function.
+I used Math.random() to assign random values for forecast variables.
+
+```js
+function forecast() {
+    counter++;
+
+    const tempature = Math.floor(Math.random() * 40) + 1;
+    const cloudy = !!Math.round(Math.random());
+    const sunny = !!Math.round(Math.random());
+    const wind = !!Math.round(Math.random());
+
+    console.log("Tomorrows weather will be....");
+    ...
+    console.log("Wind: " + wind);
+}
+```
+
+## 4. Make command loop for the chatbot.
+
+
+```js
+while (terminate === false) {
+    const answer = readline.question();
+
+    if (answer === "hello") {
+        hello();
+    } else if (answer === "botInfo") {
+        botInfo();
+    } else if (answer === "botName") {
+        botName();
+    } else if (answer === "botRename") {
+        botRename();
+    } else if (answer === "forecast") {
+        forecast();
+    } else if (answer === "help") {
+        console.log(help);
+    } else if (answer === "quit") {
+        terminate = true;
+    } else {
+        console.log("Command is not recognised, try again.");
+    }
+}
+```
