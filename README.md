@@ -68,7 +68,7 @@ weatherEvents.forEach(weatherEvent => weatherEvent.print());
 **EXTRA:** Instead of a string, use a `Date` object to specify the timestamp for the events. Also, print the Date object properly in the weather event `print` method. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
 
 
-# Dumb chatbot
+# Example 2 - Dumb chatbot
 
 Create a chatbot command line program.
 
@@ -186,3 +186,18 @@ The implementation is up to you. Below is an example of desired output.
 
 ### quit command
 If the user writes ``quit`` in to the command line, program should quit.
+
+
+##Initial thoughts
+
+##Solution
+
+##1. import and variables
+First I imported "readline" from "readline-sync" and initialized variables I need.
+
+````js
+console.log();
+```
+
+##2. Make all commands into functions.
+First I made each command into functions, example 
