@@ -193,10 +193,26 @@ If the user writes ``quit`` in to the command line, program should quit.
 ##Solution
 
 ##1. import and variables
-First I imported "readline" from "readline-sync" and initialized variables I need.
+First I imported "readline" from "readline-sync" and initialized global variables I need.
 
-````js
-console.log();
+```js
+import readline from "readline-sync";
+
+const help = `-----------------------------
+Here´s a list of commands that I can execute! 
+
+help: Opens this dialog.
+hello: I will say hello to you
+botInfo: I will introduce myself
+botName: I will tell my name
+botRename: You can rename me
+forecast: I will forecast tomorrows weather 100% accurately
+quit: Quits the program.
+-----------------------------`;
+
+let counter = 0;
+let name = "Chappy";
+let terminate = false;
 ```
 
 ##2. Make all commands into functions.
