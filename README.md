@@ -65,11 +65,10 @@ weatherEvents.forEach(weatherEvent => weatherEvent.print());
 // 2022-11-30 13:00 wind strength: 2.2 m/s
 ```
 
-**EXTRA:** Instead of a string, use a `Date` object to specify the timestamp for the events. Also, print the Date object properly in the weather event `print` method. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
-
 ### (End of the assignment - Start of the solution)
 
 ## Solution
+Full code inside "weatherevents.js"-file.
 
 ### Prerequisites
 This weather app should work on most terminals like Powershell or Command Prompt.
@@ -121,7 +120,7 @@ weatherEvents.push(new TemperatureChangeEvent("2022-11-29 03:00", -6.4));
 weatherEvents.push(new HumidityChangeEvent("2022-11-29 04:00", 95));
 weatherEvents.push(new WindStrengthChangeEvent("2022-11-30 13:00", 2.2));
 ```
-
+C:\Users\buutti\trainee-academy\vatto-alex-trainee-academy\JavaScript\11.Objects&classes\assignments\assignment8.js
 And lastly I used for each -method to print the events in console.
 ```js
 weatherEvents.forEach(weatherEvent => weatherEvent.print());
@@ -242,13 +241,13 @@ The implementation is up to you. Below is an example of desired output.
 >Wind: yes  
 
 
-
 ### quit command
 If the user writes ``quit`` in to the command line, program should quit.
 
 ### (End of the assignment - Start of the solution)
 
 ## Solution
+Full code inside "dumbchatbot.js"-file.
 
 ### Prerequisites
 This ChatBot should work on most terminals with "readline-sync"-package (npm install readline-sync).
