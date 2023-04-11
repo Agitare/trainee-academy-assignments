@@ -1,7 +1,7 @@
 # trainee-academy-assignments
 Showcase of chosen assignments and their solutions
 
-## Assignment 8 (Weather events)
+## Example 1 - (Weather events)
 
 Your friend wants to create a service for tracking changes in the weather. They want to gather information on multiple values: temperature, humidity, and wind strength.
 
@@ -67,8 +67,67 @@ weatherEvents.forEach(weatherEvent => weatherEvent.print());
 
 **EXTRA:** Instead of a string, use a `Date` object to specify the timestamp for the events. Also, print the Date object properly in the weather event `print` method. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
 
+### (End of the assignment - Start of the solution)
 
-# Example 2 - Dumb chatbot
+## Solution
+
+### Prerequisites
+This weather app should work on most terminals like Powershell or Command Prompt.
+Tested with PowerShell on Windows 10.
+
+### Initial thoughts
+We need to make four classes, which we can use to solve this problem.
+
+### 1. Making of the classes
+I made one main class and three classes which inherit from main class.
+
+Main class:
+```js
+class WeatherEvent {
+    constructor(timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    getInformation() {
+        return "";
+    }
+
+    print() {
+        console.log(`${this.timestamp} ${this.getInformation()}`);
+    }
+}
+```
+
+Example of inherited class:
+```js
+class TemperatureChangeEvent extends WeatherEvent {
+    constructor(timestamp, tempature) {
+        super(timestamp);
+        this.tempature = tempature;
+    }
+
+    getInformation() {
+        return `temperature: ${this.tempature} °C`;
+    }
+}
+```
+
+### 2. Pushing events to the array and console logging results.
+After creating all four classes I used array.push()-method to make array of weather events.
+```js
+const weatherEvents = [];
+
+weatherEvents.push(new TemperatureChangeEvent("2022-11-29 03:00", -6.4));
+weatherEvents.push(new HumidityChangeEvent("2022-11-29 04:00", 95));
+weatherEvents.push(new WindStrengthChangeEvent("2022-11-30 13:00", 2.2));
+```
+
+And lastly I used for each -method to print the events in console.
+```js
+weatherEvents.forEach(weatherEvent => weatherEvent.print());
+```
+
+# Example 2 - (Dumb chatbot)
 
 Create a chatbot command line program.
 
@@ -197,7 +256,7 @@ Tested with PowerShell on Windows 10.
 
 ### Initial thoughts
 We need to make ChatBot which prints something to console when certain command has been given to ChatBot.
-So we need 7 functions and some kind of loop at least. Also we need a few variables and way assign random values into variables.
+So we need 7 functions and some kind of loop at least. Also we need a few variables and way assign random values to said variables.
 
 ### 1. import and variables
 First I imported "readline" from "readline-sync" and initialized global variables I need.
@@ -222,7 +281,7 @@ Example function:
 
 ```js
 function botName () {
-    counter++;
+    counter++;	//Adds up the counter which we use to tell the user how many commands they have used.
     console.log(`My name is currently ${name}. If you want to change it, type botRename.`);
 }
 ```
@@ -246,7 +305,7 @@ function forecast() {
 ```
 
 ## 4. Make command loop for the chatbot.
-Then I made while loop, which is executed until user quits program.
+Lastly I made while loop, which is executed until user quits program.
 
 ```js
 while (terminate === false) {
